@@ -14,6 +14,8 @@ import Reservation from "../Components/DashBoard/Reservation/Reservation";
 import Payment from "../Components/DashBoard/PaymentHistory/Payment";
 import AddReview from "../Components/DashBoard/AddReview/AddReview";
 import Bookings from "../Components/DashBoard/Booking/Bookings";
+import PrivateRoute from "./PrivateRoute";
+import AllUsers from "../Components/DashBoard/AllUsers/AllUsers";
 
 
 
@@ -33,6 +35,7 @@ import Bookings from "../Components/DashBoard/Booking/Bookings";
         {
             path: "/order/:category",
             element:<OrderPage></OrderPage>
+            // element:<PrivateRoute><OrderPage></OrderPage></PrivateRoute>
         },
         {
           path: "/login",
@@ -49,11 +52,15 @@ import Bookings from "../Components/DashBoard/Booking/Bookings";
 
     {
       path: "dashboard",
-      element:<DashBoard></DashBoard>,
+      element:<PrivateRoute><DashBoard></DashBoard></PrivateRoute>,
       children: [
         {
           path: "mycart",
           element:<MyCart></MyCart>,
+        },
+        {
+          path: "allusers",
+          element:<AllUsers></AllUsers>
         },
         {
           path: "userhome",

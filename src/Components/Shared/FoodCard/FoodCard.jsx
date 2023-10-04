@@ -4,26 +4,31 @@ import Swal from "sweetalert2";
 import { useLocation, useNavigate } from "react-router-dom";
 import useCart from "../../CustomHook/useCart";
 
-
 const FoodCard = ({ item }) => {
   const { name, image, price, recipe, _id } = item;
-  const [ , refetch] = useCart();
+  const [cart, refetch] = useCart();
   const { user } = useContext(AuthContext);
   // console.log(user);
   const navigate = useNavigate();
   const location = useLocation();
 
-  const handleAddToCart = item => {
-    // console.log(item);
-    if (user && user.email) { 
-        const cartItem = {menuItemId: _id, name, image, price, email: user.email};
-        console.log(cartItem);
+  const handleAddToCart = (item) => {
+    console.log(item);
+    if (user && user.email) {
+      const cartItem = {
+        menuItemId: _id,
+        name,
+        image,
+        price,
+        email: user.email,
+      };
+      console.log(cartItem);
       fetch("http://localhost:5000/carts", {
         method: "POST",
         headers: {
           "content-type": "application/json",
         },
-        body: JSON.stringify(cartItem)
+        body: JSON.stringify(cartItem),
       })
         .then((res) => res.json())
         .then((data) => {
@@ -37,7 +42,8 @@ const FoodCard = ({ item }) => {
               showConfirmButton: false,
               timer: 1500,
             });
-          } else {
+          }
+           else {
             Swal.fire({
               title: "Please login to order the food",
               icon: "warning",
@@ -79,8 +85,3 @@ const FoodCard = ({ item }) => {
 };
 
 export default FoodCard;
-
-
-
-
-

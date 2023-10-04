@@ -11,6 +11,7 @@ import img1 from "../../assets/others/authentication1.png";
 import { AuthContext } from "../Providers/Authproviders";
 import Swal from "sweetalert2";
 import { useLocation, useNavigate } from 'react-router-dom';
+import SocialLogIn from "../Shared/SocialLogIn/SocialLogIn";
 
 const LogIn = () => {
 
@@ -30,10 +31,10 @@ const LogIn = () => {
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(email, password);
+    // console.log(email, password);
     signIn(email, password).then((result) => {
       const user = result.user;
-      console.log(user);
+      // console.log(user);
       Swal.fire({
         title: "User Login Successful.",
         showClass: {
@@ -125,7 +126,7 @@ const LogIn = () => {
                 New Here? <Link to="/signup">Create an account</Link>{" "}
               </small>
             </p>
-            {/* <SocialLogin></SocialLogin> */}
+            <SocialLogIn></SocialLogIn>
           </div>
         </div>
       </div>
@@ -139,6 +140,6 @@ const LogIn = () => {
 export default LogIn;
 
 
-// import SocialLogin from '../Shared/SocialLogin/SocialLogin';
+
 
 

@@ -1,51 +1,53 @@
 import { useContext } from "react";
 import { Helmet } from "react-helmet";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Providers/Authproviders";
-// import Swal from "sweetalert2";
-
-// import {useNavigate } from "react-router-dom";
-// import SocialLogin from "../Shared/SocialLogin/SocialLogin";
+import Swal from "sweetalert2";
+import SocialLogIn from "../Shared/SocialLogIn/SocialLogIn";
 
 const Signup = () => {
-
-    const { register, handleSubmit, formState: { errors } } = useForm();
-    // const { register, handleSubmit, reset, formState: { errors } } = useForm();
-        const { createUser} = useContext(AuthContext);
-        // const { createUser, updateUserProfile } = useContext(AuthContext);
-    //     const navigate = useNavigate();
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
+  const { createUser, updateUserProfile } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const onSubmit = (data) => {
     createUser(data.email, data.password).then((result) => {
       const loggedUser = result.user;
       console.log(loggedUser);
-    //   updateUserProfile(data.name, data.photoURL)
-    //     .then(() => {
-    //       const saveUser = { name: data.name, email: data.email };
-    //       fetch("https://bistro-boss-server-fawn.vercel.app/users", {
-    //         method: "POST",
-    //         headers: {
-    //           "content-type": "application/json",
-    //         },
-    //         body: JSON.stringify(saveUser),
-    //       })
-    //         .then((res) => res.json())
-    //         .then((data) => {
-    //           if (data.insertedId) {
-    //             reset();
-    //             Swal.fire({
-    //               position: "top-end",
-    //               icon: "success",
-    //               title: "User created successfully.",
-    //               showConfirmButton: false,
-    //               timer: 1500,
-    //             });
-    //             // navigate("/");
-    //           }
-    //         });
-    //     })
-    //     .catch((error) => console.log(error));
+
+      updateUserProfile(data.name, data.photoURL)
+        .then(() => {
+          const saveUser = { name: data.name, email: data.email };
+          console.log(saveUser);
+          fetch("http://localhost:5000/users", {
+            method: "POST",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify(saveUser),
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              if (data.insertedId) {
+                reset();
+                Swal.fire({
+                  position: "top-end",
+                  icon: "success",
+                  title: "User created successfully.",
+                  showConfirmButton: false,
+                  timer: 1500,
+                });
+                navigate("/");
+              }
+            });
+        })
+        .catch((error) => console.log(error));
     });
   };
 
@@ -64,6 +66,7 @@ const Signup = () => {
               et a id nisi.
             </p>
           </div>
+
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <form onSubmit={handleSubmit(onSubmit)} className="card-body">
               <div className="form-control">
@@ -161,7 +164,7 @@ const Signup = () => {
                 Already have an account <Link to="/login">Login</Link>
               </small>
             </p>
-            {/* <SocialLogin></SocialLogin> */}
+            <SocialLogIn></SocialLogIn>
           </div>
         </div>
       </div>
@@ -171,6 +174,7 @@ const Signup = () => {
 
 export default Signup;
 
+// import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 
 
 
