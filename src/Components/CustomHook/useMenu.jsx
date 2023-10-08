@@ -1,8 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 
 const useMenu =()=>{
-
-       const {data: menu = [], isLoading: loading, refetch} = useQuery({
+  const {data: menu = [], isLoading: loading, refetch} = useQuery({
         queryKey: ['menu'],
         queryFn: async() => {
             const res = await fetch('http://localhost:5000/menues');
@@ -10,7 +9,7 @@ const useMenu =()=>{
         }
     })
 
-    return [menu, loading, refetch]
+    return [menu,loading , refetch]
 }
 export default useMenu;
 

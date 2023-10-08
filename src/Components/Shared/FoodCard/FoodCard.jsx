@@ -6,7 +6,7 @@ import useCart from "../../CustomHook/useCart";
 
 const FoodCard = ({ item }) => {
   const { name, image, price, recipe, _id } = item;
-  const [cart, refetch] = useCart();
+  const [ refetch] = useCart();
   const { user } = useContext(AuthContext);
   // console.log(user);
   const navigate = useNavigate();
@@ -43,21 +43,21 @@ const FoodCard = ({ item }) => {
               timer: 1500,
             });
           }
-           else {
-            Swal.fire({
-              title: "Please login to order the food",
-              icon: "warning",
-              showCancelButton: true,
-              confirmButtonColor: "#3085d6",
-              cancelButtonColor: "#d33",
-              confirmButtonText: "Login now!",
-            }).then((result) => {
-              if (result.isConfirmed) {
-                navigate("/login", { state: { from: location } });
-              }
-            });
-          }
+          
         });
+    } else {
+      Swal.fire({
+        title: "Please login to order the food",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Login now!",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          navigate("/login", { state: { from: location } });
+        }
+      });
     }
   };
   return (

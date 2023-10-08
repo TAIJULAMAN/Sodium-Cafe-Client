@@ -30,6 +30,7 @@
     "react-router-dom": "^6.16.0",
     "react-simple-captcha": "^9.3.0",
     "react-tabs": "^6.0.2",
+    "recharts": "^2.8.0",
     "sort-by": "^1.2.0",
     "sweetalert2": "^11.7.31",
     "swiper": "^10.2.0"

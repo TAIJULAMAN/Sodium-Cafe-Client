@@ -5,7 +5,7 @@ import CheckoutForm from "./CheckoutForm";
 import useCart from "../../CustomHook/useCart";
 
 
-const stripePromise = loadStripe(import.meta.env.VITE_PAYMENT_GATEWAY_PK);
+const stripePromise = loadStripe(import.meta.env.VITE_PAYMENT_GATEWAY);
 
 const Payment = () => {
         const [cart] = useCart();
@@ -15,7 +15,8 @@ const Payment = () => {
         <div className="w-full">
                   <SectionTitle subHeading="please process" heading="Payment"></SectionTitle>
                   <Elements stripe={stripePromise}>
-                      <CheckoutForm price={price}></CheckoutForm>
+                      {/* <CheckoutForm price={price}></CheckoutForm> */}
+                      <CheckoutForm cart={cart} price={price}></CheckoutForm>
                       {/* <CheckoutForm  cart={cart} price={price}></CheckoutForm> */}
                   </Elements>
               </div>
