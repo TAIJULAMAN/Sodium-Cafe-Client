@@ -5,7 +5,12 @@ import useAuth from "./useAuth";
 const useCart = () => {
   const { user, loading } = useAuth();
   console.log(user)
+  console.log(loading)
+  if(loading){
+    <progress className="progress progress-info w-56" value="100" max="100"></progress>
+  }
   //  const token = localStorage.getItem('access-token');
+  //  console.log(token)
   const [axiosSecure] = useAxiosSecure();
   const { refetch, data: cart = [] } = useQuery({
     queryKey: ["carts", user?.email],
@@ -15,9 +20,10 @@ const useCart = () => {
       return res.data;
     },
   });
-  return [cart, refetch];
+  return [ cart, refetch];
 };
 export default useCart;
+
 
 // import { useQuery } from '@tanstack/react-query'
 // import useAxiosSecure from './useAxiosSecure';

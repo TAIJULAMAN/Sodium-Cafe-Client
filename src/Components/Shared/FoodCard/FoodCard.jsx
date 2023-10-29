@@ -43,7 +43,7 @@ const FoodCard = ({ item }) => {
               timer: 1500,
             });
           }
-          
+          // refetch();
         });
     } else {
       Swal.fire({
@@ -61,9 +61,9 @@ const FoodCard = ({ item }) => {
     }
   };
   return (
-    <div className="card w-96 bg-base-100 shadow-xl">
-      <figure>
-        <img src={image} alt="Shoes" />
+    <div className="card w-96 bg-base-100 shadow-xl my-5 ml-3">
+      <figure className="rounded p-2" >
+        <img  src={image} alt="food-pic" />
       </figure>
       <p className="absolute right-0 mr-4 mt-4 px-4 bg-slate-900 text-white">
         ${price}

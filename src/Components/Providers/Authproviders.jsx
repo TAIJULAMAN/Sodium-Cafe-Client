@@ -4,7 +4,7 @@ import {GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthState
 import app from "../Firebase/config.firebase";
 import axios from "axios";
 
-// import axios from "axios";
+
 
 export const AuthContext = createContext(null);
 const auth = getAuth(app);
@@ -81,28 +81,6 @@ const Authproviders = ({ children }) => {
 };
 
 export default Authproviders;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // get and set token
 //        if(currentUser){

@@ -5,7 +5,8 @@ import Navbar from "../Components/Shared/Navbar/Navbar";
 const Main = () => {
 // if you dont want to show the navigation and footer in login page.
 const location = useLocation();
-const noHeaderFooter = location.pathname.includes('login');
+const noHeaderFooter = location.pathname.includes('gallery');
+
 
     return (
         <div>

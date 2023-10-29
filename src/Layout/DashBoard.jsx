@@ -15,31 +15,30 @@ import useAdmin from "../Components/CustomHook/useAdmin";
 
 const DashBoard = () => {
   const [cart] = useCart();
-//  const isAdmin = true;
     const [isAdmin] = useAdmin();
   return (
-    <div className="drawer lg:drawer-open">
+    <div className="drawer text-black lg:drawer-open">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col items-center justify-center">
         {/* Page content here */}
         <Outlet></Outlet>
         <label
           htmlFor="my-drawer-2"
-          className="btn btn-primary drawer-button lg:hidden"
+          className="btn btn-primary text-white drawer-button lg:hidden"
         >
           Open drawer
         </label>
       </div>
 
-      <div className="drawer-side bg-[#D1A054]">
+      <div className="drawer-side bg-orange-400">
         <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
         <ul className="menu p-4 w-80">
         {
                         isAdmin ? <>
                             <li><NavLink to="/dashboard/adminhome"><FaHome></FaHome> Admin Home</NavLink></li>
-                            <li><NavLink to="/dashboard/addItem"> <FaUtensils></FaUtensils> Add an Item</NavLink></li>
+                            <li><NavLink to="/dashboard/addItem"> <FaUtensils></FaUtensils> Add Item</NavLink></li>
                             <li><NavLink to="/dashboard/manageitem"><FaWallet></FaWallet> Manage Items</NavLink></li>
-                            <li><NavLink to="/"><FaBook></FaBook> Manage Bookings(not implemented)</NavLink></li>
+                            <li><NavLink to="/"><FaBook></FaBook> Manage Bookings</NavLink></li>
                             <li><NavLink to="/dashboard/allusers"><FaUsers></FaUsers> All Users</NavLink></li>
 
                         </> : <>
@@ -78,3 +77,4 @@ const DashBoard = () => {
 };
 
 export default DashBoard;
+

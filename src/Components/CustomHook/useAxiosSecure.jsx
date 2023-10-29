@@ -5,9 +5,8 @@ import useAuth from './useAuth';
 
 
 const axiosSecure = axios.create({
-  baseURL: 'https://sodium-cafe-server-gg.vercel.app', 
+  baseURL: 'http://localhost:5000', 
 });
-
 const useAxiosSecure = () => {
   const { logOut } = useAuth(); 
   const navigate = useNavigate(); 
@@ -34,8 +33,9 @@ const useAxiosSecure = () => {
         return Promise.reject(error);
       }
     );
-  // }, [logOut]);
+  
   }, [logOut, navigate]);
+
 
   return [axiosSecure];
 };

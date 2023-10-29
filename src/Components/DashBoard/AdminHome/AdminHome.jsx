@@ -1,10 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
 import useAuth from "../../CustomHook/useAuth";
 import useAxiosSecure from "../../CustomHook/useAxiosSecure";
-import { Bar, BarChart, CartesianGrid, Cell, Legend, Pie, PieChart, ResponsiveContainer, XAxis, YAxis } from "recharts";
+import { Bar, BarChart, CartesianGrid, Cell, Pie, PieChart, XAxis, YAxis } from "recharts";
 
 const AdminHome = () => {
       const { user } = useAuth();
+      console.log(user)
     const [axiosSecure] = useAxiosSecure();
 
     const { data: stats = {} } = useQuery({
@@ -19,9 +20,12 @@ const AdminHome = () => {
         queryKey: ['chart-data'],
         queryFn: async () => {
             const res = await axiosSecure('/order-stats');
+            console.log(res)
             return res.data;
         }
     })
+
+    console.log(chartData)
 
     const colors = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', 'red', 'pink'];
 
@@ -51,11 +55,11 @@ const AdminHome = () => {
         );
     };
     return (
-        <div className="w-full m-4">
-            <h2 className="text-3xl">Hi, {user.displayName}</h2>
-            <div className="stats shadow">
+        <div className="w-full">
+            <h2 className="text-3xl  ml-10 my-8">Hi, {user.displayName}</h2>
+            <div className="stats shadow  ml-10 my-8 gap-4">
 
-                <div className="stat">
+                <div className="stat bg-[#0088FE]">
                     <div className="stat-figure text-secondary">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-8 h-8 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                     </div>
@@ -64,7 +68,7 @@ const AdminHome = () => {
                     <div className="stat-desc">Jan 1st - Feb 1st</div>
                 </div>
 
-                <div className="stat">
+                <div className="stat bg-[#00C49F]">
                     <div className="stat-figure text-secondary">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-8 h-8 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg>
                     </div>
@@ -72,7 +76,7 @@ const AdminHome = () => {
                     <div className="stat-value">{stats.users}</div>
                     <div className="stat-desc">↗︎ 400 (22%)</div>
                 </div>
-                <div className="stat">
+                <div className="stat bg-[#0088FE]">
                     <div className="stat-figure text-secondary">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-8 h-8 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg>
                     </div>
@@ -81,7 +85,7 @@ const AdminHome = () => {
                     <div className="stat-desc">↗︎ 400 (22%)</div>
                 </div>
 
-                <div className="stat">
+                <div className="stat bg-[#00C49F]">
                     <div className="stat-figure text-secondary">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-8 h-8 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path></svg>
                     </div>
@@ -115,9 +119,9 @@ const AdminHome = () => {
                     </BarChart>
                 </div>
                 <div className="w-1/2">
-                    <ResponsiveContainer width="100%" height="100%">
+                    {/* <ResponsiveContainer width="100%" height="100%"> */}
                         <PieChart width={400} height={400}>
-                            <Legend></Legend>
+                            {/* <Legend></Legend> */}
                             <Pie
                                 data={chartData}
                                 cx="50%"
@@ -133,7 +137,7 @@ const AdminHome = () => {
                                 ))}
                             </Pie>
                         </PieChart>
-                    </ResponsiveContainer>
+                    {/* </ResponsiveContainer> */}
                 </div>
             </div>
         </div>

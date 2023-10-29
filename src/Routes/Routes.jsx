@@ -21,6 +21,7 @@ import AdminRoute from "./AdminRoute";
 import ManageItem from "../Components/DashBoard/ManageItem/ManageItem";
 import AdminHome from "../Components/DashBoard/AdminHome/AdminHome";
 import Payment from "../Components/DashBoard/Payment/Payment";
+import Gallery from "../Components/Home/Gallery/Gallery";
 
 
 
@@ -48,7 +49,12 @@ import Payment from "../Components/DashBoard/Payment/Payment";
         {
           path: "/signup",
           element:<Signup></Signup>
+      },
+        {
+          path: "gallery",
+          element:<Gallery></Gallery>
       }
+
       ]
     },
 
