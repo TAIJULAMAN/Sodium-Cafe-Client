@@ -4,9 +4,12 @@ import Banner from "../Banner/Banner";
 import Catagory from "../Catagory/Catagory";
 import ChefRecommands from "../ChefRecommands/ChefRecommands";
 // import Featured from "../Featured/Featured";
-import PhnNumber from "../PhnNumber/PhnNumber";
+// import PhnNumber from "../PhnNumber/PhnNumber";
 import ReviewSection from "../ReviewSection/ReviewSection";
 import PopularItem from "../PopularItem/PopularItem";
+import MapSodium from "../Map/MapSodium";
+import AccordionPart from "../Accordion/AccordionPart";
+// import DoubleBanner from "../DoubleBanner/DoubleBanner";
 
 
 const Home = () => {
@@ -15,15 +18,17 @@ const Home = () => {
       <Helmet>
         <title>Sodium Cafe | Home</title>
       </Helmet>
-     
+{/* <DoubleBanner></DoubleBanner> */}
       <Banner></Banner>
       <Catagory></Catagory>
       <PopularItem></PopularItem>
       <About></About>
-      <PhnNumber></PhnNumber>
+      {/* <PhnNumber></PhnNumber> */}
       <ChefRecommands></ChefRecommands>
       {/* <Featured></Featured> */}
+      <AccordionPart></AccordionPart>
       <ReviewSection></ReviewSection>
+      <MapSodium></MapSodium>
     </div>
   );
 };
