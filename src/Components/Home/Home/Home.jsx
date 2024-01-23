@@ -7,8 +7,9 @@ import ChefRecommands from "../ChefRecommands/ChefRecommands";
 // import PhnNumber from "../PhnNumber/PhnNumber";
 import ReviewSection from "../ReviewSection/ReviewSection";
 import PopularItem from "../PopularItem/PopularItem";
-import MapSodium from "../Map/MapSodium";
+// import MapSodium from "../Map/MapSodium";
 import AccordionPart from "../Accordion/AccordionPart";
+import MarqueeText from "../marquee/MarqueeText";
 // import DoubleBanner from "../DoubleBanner/DoubleBanner";
 
 
@@ -20,6 +21,7 @@ const Home = () => {
       </Helmet>
 {/* <DoubleBanner></DoubleBanner> */}
       <Banner></Banner>
+      <MarqueeText></MarqueeText>
       <Catagory></Catagory>
       <PopularItem></PopularItem>
       <About></About>
@@ -28,7 +30,7 @@ const Home = () => {
       {/* <Featured></Featured> */}
       <AccordionPart></AccordionPart>
       <ReviewSection></ReviewSection>
-      <MapSodium></MapSodium>
+      {/* <MapSodium></MapSodium> */}
     </div>
   );
 };

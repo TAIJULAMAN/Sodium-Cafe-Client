@@ -28,12 +28,12 @@ const OrderPage = () => {
 
       <Cover
         img={img}
-        title={"order food"}
+        title={"Order Food"}
         detail={"Would you like to try a dish?"}
       ></Cover>
 
       <Tabs defaultIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
-        <TabList className="text-center bg-slate-500 mb">
+        <TabList className="text-center text-orange-800 bg-[#2B3440]">
           <Tab>pizza</Tab>
           <Tab>soup</Tab>
           <Tab>salad</Tab>

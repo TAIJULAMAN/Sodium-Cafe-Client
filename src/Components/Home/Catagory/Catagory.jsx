@@ -13,60 +13,145 @@ const Catagory = () => {
   return (
     <section className="mb-5 w-full overflow-x-hidden mw-[600px]">
       <SectionTitle
-        subHeading={"From 11.00am to 10.00pm"}
-        heading={"Order Online"}
+        subHeading={"From 11.30 am to 11.00 pm"}
+        heading={"Food Catagory"}
       ></SectionTitle>
       <Swiper
         slidesPerView={4}
-        spaceBetween={10}
-        pagination={{
-          clickable: true,
-        }}
-        modules={[Pagination]}
-        className="mySwiper  max-w-screen-xl mb-10"
+        spaceBetween={5}
+        // pagination={{
+        //   clickable: true,
+        // }}
+        // modules={[Pagination]}
+        className="mySwiper max-w-screen-md md:max-w-screen-xl lg:max-w-screen-xl mb-5"
       >
         <SwiperSlide>
           <img src={cat1} alt="" />
-          <h3 className="sm:text-4xl text-sm uppercase text-center  -mt-16 text-white">
-            Salad
+          <h3 className="-mt-10 mr-3 sm:text-7xl font-bold text-sm uppercase text-center  text-[#2B3440]">
+            Appetizer
           </h3>
         </SwiperSlide>
         <SwiperSlide>
           <img src={cat2} alt="" />
-          <h3 className="sm:text-4xl text-sm  uppercase text-center -mt-16 text-white">
-            Pizza
+          <h3 className="sm:text-7xl text-sm font-bold uppercase text-center -mt-10 mr-3 text-[#2B3440]">
+            Soup
           </h3>
         </SwiperSlide>
         <SwiperSlide>
           <img src={cat3} alt="" />
-          <h3 className="sm:text-4xl text-sm  uppercase text-center -mt-16 text-white">
-            Soup
+          <h3 className="sm:text-7xl text-sm font-bold uppercase text-center -mt-10 mr-3 text-[#2B3440]">
+            Meatbox
           </h3>
         </SwiperSlide>
         <SwiperSlide>
           <img src={cat4} alt="" />
-          <h3 className="sm:text-4xl text-sm  uppercase text-center -mt-16 text-white">
-            Desert
+          <h3 className="sm:text-7xl text-sm font-bold uppercase text-center -mt-10 mr-3 text-[#2B3440]">
+            Wrap
           </h3>
         </SwiperSlide>
         <SwiperSlide>
           <img src={cat5} alt="" />
-          <h3 className="sm:text-4xl text-sm  uppercase text-center -mt-16 text-white">
-            Salad
+          <h3 className="sm:text-7xl text-sm font-bold uppercase text-center -mt-10 mr-3 text-[#2B3440]">
+            Sea Food
           </h3>
         </SwiperSlide>
         <SwiperSlide>
           <img src={cat3} alt="" />
-          <h3 className="sm:text-4xl text-sm  uppercase text-center -mt-16 text-white">
-            Soup
+          <h3 className="sm:text-7xl text-sm font-bold uppercase text-center -mt-10 mr-3 text-[#2B3440]">
+            Momo
           </h3>
         </SwiperSlide>
         <SwiperSlide>
           <img src={cat2} alt="" />
-          <h3 className="sm:text-4xl text-sm uppercase text-center -mt-16 text-white">
+          <h3 className="sm:text-7xl text-sm font-bold uppercase text-center -mt-10 mr-3 text-[#2B3440]">
+            Platter
+          </h3>
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={cat2} alt="" />
+          <h3 className="sm:text-7xl text-sm font-bold uppercase text-center -mt-10 mr-3 text-[#2B3440]">
+            Pasta
+          </h3>
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={cat2} alt="" />
+          <h3 className="sm:text-7xl text-sm font-bold uppercase text-center -mt-10 mr-3 text-[#2B3440]">
+            Burger
+          </h3>
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={cat2} alt="" />
+          <h3 className="sm:text-7xl text-sm font-bold uppercase text-center -mt-10 mr-3 text-[#2B3440]">
+            Chicken Fry
+          </h3>
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={cat2} alt="" />
+          <h3 className="sm:text-7xl text-sm font-bold uppercase text-center -mt-10 mr-3 text-[#2B3440]">
+            Rice Bowl
+          </h3>
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={cat2} alt="" />
+          <h3 className="sm:text-7xl text-sm font-bold uppercase text-center -mt-10 mr-3 text-[#2B3440]">
             Pizza
           </h3>
         </SwiperSlide>
+        <SwiperSlide>
+          <img src={cat2} alt="" />
+          <h3 className="sm:text-7xl text-sm font-bold uppercase text-center -mt-10 mr-3 text-[#2B3440]">
+            Chow Mein
+          </h3>
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={cat2} alt="" />
+          <h3 className="sm:text-7xl text-sm font-bold uppercase text-center -mt-10 mr-3 text-[#2B3440]">
+            Salad
+          </h3>
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={cat2} alt="" />
+          <h3 className="sm:text-7xl text-sm font-bold uppercase text-center -mt-10 mr-3 text-[#2B3440]">
+            Sizzling
+          </h3>
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={cat2} alt="" />
+          <h3 className="sm:text-7xl text-sm font-bold uppercase text-center -mt-10 mr-3 text-[#2B3440]">
+            Rice
+          </h3>
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={cat2} alt="" />
+          <h3 className="sm:text-7xl text-sm font-bold uppercase text-center -mt-10 mr-3 text-[#2B3440]">
+            Vegetable
+          </h3>
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={cat2} alt="" />
+          <h3 className="sm:text-7xl text-sm font-bold uppercase text-center -mt-10 mr-3 text-[#2B3440]">
+            Curry
+          </h3>
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={cat2} alt="" />
+          <h3 className="sm:text-7xl text-sm font-bold uppercase text-center -mt-10 mr-3 text-[#2B3440]">
+            Drink
+          </h3>
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={cat2} alt="" />
+          <h3 className="sm:text-7xl text-sm font-bold uppercase text-center -mt-10 mr-3 text-[#2B3440]">
+            Ice Cream
+          </h3>
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={cat2} alt="" />
+          <h3 className="sm:text-7xl text-sm font-bold uppercase text-center -mt-10 mr-3 text-[#2B3440]">
+            Add On
+          </h3>
+        </SwiperSlide>
+
       </Swiper>
     </section>
   );

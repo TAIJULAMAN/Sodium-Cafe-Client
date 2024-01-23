@@ -4,16 +4,16 @@ import MenuItem from "../MenuItem/MenuItem";
 
 const MenuCatagory = ({ img, title, items, detail }) => {
   return (
-    <div className="pt-8">
+    <div className="pt-5">
       {title && <Cover img={img} title={title} detail={detail}></Cover>}
-      <div className="grid md:grid-cols-2 gap-10 my-16">
+      <div className="grid md:grid-cols-2 gap-10 my-10">
         {items.map((item) => (
           <MenuItem key={item._id} item={item}></MenuItem>
         ))}
       </div>
       <div className="text-center my-5">
        <Link to={`/order/${title}`}>
-       <button className="btn border-orange-600 btn-outline border-0 border-b-4 mt-4">
+       <button className="btn border-[#2B3440] btn-outline border-0 border-b-4">
           Order Now
         </button>
        </Link>

@@ -5,8 +5,8 @@ const Footer = () => {
     <footer className="text-primary-content">
       <div className="footer p-10 bg-neutral text-neutral-content">
         <div className="ml-10">
-          <h1 className="text-5xl text-orange-600">CONTACT US</h1>
-          <p className="pl-5">
+          <h1 className="text-5xl text-white">CONTACT US</h1>
+          <p className="">
           Shaista Begum super market, Farm er mor, Konapara, Dhaka-1361.
             <br />
             +88 01868474438
@@ -17,7 +17,7 @@ const Footer = () => {
           </p>
         </div>
         <div className="ml-11">
-          <h1 className="footer text-5xl text-orange-600">Follow US</h1>
+          <h1 className="footer text-5xl text-white">Follow US</h1>
           <p>Join us on Social Media</p>
           <div className="grid grid-flow-col gap-4">
            

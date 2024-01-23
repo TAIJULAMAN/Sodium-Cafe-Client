@@ -9,7 +9,7 @@ const ChefRecommands = () => {
       .then((res) => res.json())
       .then((data) => {
         const recommandesItems = data.filter(
-          (items) => items.category === "soup"
+          (items) => items.category === "popular"
         );
         setItems(recommandesItems);
       });
@@ -17,10 +17,10 @@ const ChefRecommands = () => {
   return (
     <section className=" max-w-7xl mx-auto ">
       <SectionTitle
-        subHeading="Should Try"
+        subHeading="Should Try To"
         heading="CHEF RECOMMENDS"
       ></SectionTitle>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 mr-3">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 ml-2">
         {items.map((item) => (
           <ItemCard key={item._id} item={item}></ItemCard>
         ))}
